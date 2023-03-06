@@ -12,7 +12,7 @@ def sapper():
             break
         x = int(input("x: "))
         y = int(input("y: "))
-        ms.reveal_fields(x, y)
+        ms.reveal_fields(y, x)
         ms.print_board()
 
 
