@@ -21,8 +21,8 @@ def get_number(a, b, text: str) -> int:
     return number
 
 
-def lay_mines():
-    mines_amount = get_number(10, 20, "Podaj liczbę min: ")
+def lay_mines(height, width):
+    mines_amount = get_number(10, (height - 1) * (width - 1), "Podaj liczbę min: ")
     result = []
     for i in range(mines_amount):
         while True:
@@ -52,7 +52,7 @@ def create_board():
     height = get_number(8, 30, "Podaj wysokość: ")
     width = get_number(8, 24, "Podaj szerokość: ")
     global mines_locations
-    mines_locations = lay_mines()
+    mines_locations = lay_mines(height, width)
     global field
     field = np.zeros((height, width))
     for x in range(height):
